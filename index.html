@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TecnoMundo Store | Tecnología y Accesorios</title>
+  <meta name="description" content="Descubre gadgets, accesorios electrónicos, computación y asesoría tecnológica en TecnoMundo Store.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --dark: #0b1630;
+      --dark-2: #111f3d;
+      --cyan: #22d3ee;
+      --white: #ffffff;
+      --light: #f4f8fc;
+      --text: #26354b;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    .navbar {
+      background: var(--dark);
+      padding: 15px 0;
+    }
+
+    .navbar-brand {
+      color: white !important;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .brand-highlight {
+      color: var(--cyan);
+    }
+
+    .navbar .nav-link {
+      color: #dce7f5 !important;
+      margin-left: 12px;
+      transition: .3s;
+    }
+
+    .navbar .nav-link:hover {
+      color: var(--cyan) !important;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0b1630, #14294d);
+      color: white;
+      padding: 150px 0 100px;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .hero h1 span {
+      color: var(--cyan);
+    }
+
+    .hero p {
+      color: #c7d5e7;
+      font-size: 1.15rem;
+    }
+
+    .btn-cyan {
+      background: var(--cyan);
+      border: 1px solid var(--cyan);
+      color: var(--dark);
+      font-weight: 700;
+      padding: 12px 25px;
+      border-radius: 8px;
+      transition: .3s;
+    }
+
+    .btn-cyan:hover {
+      background: white;
+      border-color: white;
+      color: var(--dark);
+    }
+
+    .btn-outline-cyan {
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    .btn-outline-cyan:hover {
+      background: var(--cyan);
+      color: var(--dark);
+    }
+
+    .hero-image {
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.3);
+    }
+
+    .section-padding {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .section-subtitle {
+      color: #64748b;
+    }
+
+    .about-icon {
+      width: 60px;
+      height: 60px;
+      background: #e0faff;
+      color: #0891b2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card {
+      border: none;
+      border-radius: 18px;
+      overflow: hidden;
+      height: 100%;
+      box-shadow: 0 8px 30px rgba(11,22,48,.08);
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(11,22,48,.14);
+    }
+
+    .service-card img {
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .service-card .card-body {
+      padding: 25px;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .services-section {
+      background: var(--light);
+    }
+
+    .testimonials-section {
+      background: var(--dark);
+      color: white;
+    }
+
+    .testimonials-section .section-title {
+      color: white;
+    }
+
+    .testimonial-card {
+      background: var(--dark-2);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 30px;
+      height: 100%;
+    }
+
+    .testimonial-card p {
+      color: #d0dceb;
+    }
+
+    .testimonial-stars {
+      color: var(--cyan);
+    }
+
+    .contact-section {
+      background: var(--light);
+    }
+
+    .contact-box {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(11,22,48,.08);
+    }
+
+    .contact-info {
+      background: var(--dark);
+      color: white;
+      padding: 35px;
+      border-radius: 20px;
+      height: 100%;
+    }
+
+    .contact-info p {
+      color: #d0dceb;
+    }
+
+    .contact-info a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .form-control {
+      padding: 12px;
+      border-radius: 8px;
+    }
+
+    .form-control:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 .2rem rgba(34,211,238,.15);
+    }
+
+    footer {
+      background: #071021;
+      color: #c7d5e7;
+      padding: 30px 0;
+    }
+
+    footer a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    .social-link {
+      font-size: 1.3rem;
+      margin-left: 15px;
+    }
+
+    @media (max-width: 991px) {
+      .hero {
+        padding-top: 120px;
+      }
+
+      .navbar .nav-link {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#inicio">
+      <i class="bi bi-cpu-fill brand-highlight"></i>
+      TECNO<span class="brand-highlight">MUNDO</span> STORE
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarMenu" aria-controls="navbarMenu"
+      aria-expanded="false" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+          <a class="btn btn-cyan btn-sm" href="#contacto">Contáctanos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <span class="badge rounded-pill text-bg-info mb-3">
+          Tecnología para tu día a día
+        </span>
+
+        <h1>
+          La tecnología que necesitas.
+          <span>A un clic.</span>
+        </h1>
+
+        <p class="mt-4 mb-4">
+          Descubre gadgets, accesorios y soluciones tecnológicas
+          pensadas para conectar, facilitar y mejorar tu día a día.
+        </p>
+
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#servicios" class="btn btn-cyan">
+            Explorar servicios <i class="bi bi-arrow-right"></i>
+          </a>
+
+          <a href="#contacto" class="btn btn-outline-cyan">
+            Contactar
+          </a>
+        </div>
+
+        <div class="mt-4">
+          <i class="bi bi-shield-check brand-highlight"></i>
+          <span class="small text-light">Compra con confianza</span>
+          <span class="mx-3 text-secondary">|</span>
+          <i class="bi bi-headset brand-highlight"></i>
+          <span class="small text-light">Asesoría personalizada</span>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <img
+          src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=85"
+          class="img-fluid hero-image"
+          alt="Smartphone moderno y tecnología móvil">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="section-padding" id="nosotros">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <img
+          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85"
+          class="img-fluid rounded-4 shadow"
+          alt="Equipo trabajando con soluciones tecnológicas">
+      </div>
+
+      <div class="col-lg-6">
+        <span class="text-uppercase fw-bold brand-highlight">Sobre nosotros</span>
+        <h2 class="section-title mt-2 mb-4">
+          Tecnología accesible, atención cercana
+        </h2>
+
+        <p>
+          En TecnoMundo Store nos apasiona la tecnología y creemos que
+          encontrar los productos adecuados debe ser fácil, seguro y accesible.
+        </p>
+
+        <p>
+          Ofrecemos artículos electrónicos, gadgets, accesorios y productos
+          de computación para acompañarte en tus actividades cotidianas,
+          ya sea en el trabajo, los estudios o el entretenimiento.
+        </p>
+
+        <p>
+          Queremos ayudarte a encontrar exactamente lo que necesitas,
+          brindándote una experiencia de compra cercana y confiable.
+        </p>
+
+        <div class="row mt-4 g-3">
+          <div class="col-6">
+            <div class="about-icon">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h5 class="fw-bold">Compra segura</h5>
+            <p class="small">Confianza y respaldo en tus compras.</p>
+          </div>
+
+          <div class="col-6">
+            <div class="about-icon">
+              <i class="bi bi-lightning-charge"></i>
+            </div>
+            <h5 class="fw-bold">Innovación</h5>
+            <p class="small">Productos pensados para tu día a día.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section-padding services-section" id="servicios">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="text-uppercase fw-bold brand-highlight">Nuestros servicios</span>
+      <h2 class="section-title mt-2">Soluciones tecnológicas para ti</h2>
+      <p class="section-subtitle">
+        Todo lo que necesitas para conectarte, trabajar y disfrutar.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- SERVICIO 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card service-card">
+          <img
+            src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=85"
+            class="card-img-top"
+            alt="Artículos electrónicos y accesorios tecnológicos">
+
+          <div class="card-body">
+            <h3>Venta de artículos electrónicos y accesorios</h3>
+
+            <p>
+              Contamos con un amplio catálogo de dispositivos de última
+              generación, incluyendo smartphones, audífonos inalámbricos,
+              relojes inteligentes, cargadores rápidos y periféricos para computador.
+            </p>
+
+            <p>
+              Todos nuestros productos cuentan con garantía oficial
+              y respaldo técnico.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICIO 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card service-card">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
+            class="card-img-top"
+            alt="Asesoría tecnológica personalizada">
+
+          <div class="card-body">
+            <h3>Asesoría tecnológica personalizada</h3>
+
+            <p>
+              Te ayudamos a elegir el equipo o accesorio exacto según
+              tus necesidades de trabajo, estudio o entretenimiento y tu presupuesto.
+            </p>
+
+            <p>
+              Evaluamos compatibilidad de cables, adaptadores y componentes
+              para que realices una compra segura sin gastar de más.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICIO 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card service-card">
+          <img
+            src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=900&q=85"
+            class="card-img-top"
+            alt="Despacho rápido y entrega de productos tecnológicos">
+
+          <div class="card-body">
+            <h3>Despacho rápido y retiro en tienda</h3>
+
+            <p>
+              Realizamos envíos seguros y rápidos a domicilio en toda la
+              región y despachos a todo Chile mediante courier.
+            </p>
+
+            <p>
+              También ofrecemos la opción de compra online con retiro
+              inmediato en nuestro punto de entrega sin costo adicional.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="section-padding testimonials-section" id="testimonios">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="text-uppercase fw-bold brand-highlight">Experiencias</span>
+      <h2 class="section-title mt-2">Lo que nuestros clientes podrían decir</h2>
+      <p class="text-secondary">
+        Ejemplos ilustrativos de testimonios. Reemplázalos por opiniones reales.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-4">
+        <div class="testimonial-card">
+          <div class="testimonial-stars mb-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+
+          <p>
+            "Encontré los accesorios que necesitaba y recibí orientación
+            para elegir la opción más conveniente."
+          </p>
+
+          <h6 class="text-white fw-bold mt-4">Cliente de ejemplo</h6>
+          <small class="text-secondary">Testimonio ilustrativo</small>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="testimonial-card">
+          <div class="testimonial-stars mb-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+
+          <p>
+            "Me ayudaron a encontrar un accesorio compatible con mi equipo.
+            La atención personalizada marca la diferencia."
+          </p>
+
+          <h6 class="text-white fw-bold mt-4">Cliente de ejemplo</h6>
+          <small class="text-secondary">Testimonio ilustrativo</small>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="testimonial-card">
+          <div class="testimonial-stars mb-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+
+          <p>
+            "Una excelente alternativa para encontrar productos tecnológicos
+            y recibir una orientación clara antes de comprar."
+          </p>
+
+          <h6 class="text-white fw-bold mt-4">Cliente de ejemplo</h6>
+          <small class="text-secondary">Testimonio ilustrativo</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section-padding contact-section" id="contacto">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="text-uppercase fw-bold brand-highlight">Contacto</span>
+      <h2 class="section-title mt-2">¿Cómo podemos ayudarte?</h2>
+      <p class="section-subtitle">
+        Escríbenos y estaremos encantados de ayudarte.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <div class="contact-info">
+          <h3 class="fw-bold mb-4">Conectemos</h3>
+
+          <p>
+            <i class="bi bi-envelope-fill brand-highlight me-2"></i>
+            <a href="mailto:raiandi@electoutlook.cl">
+              raiandi@electoutlook.cl
+            </a>
+          </p>
+
+          <p>
+            <i class="bi bi-instagram brand-highlight me-2"></i>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
+          </p>
+
+          <p>
+            <i class="bi bi-facebook brand-highlight me-2"></i>
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+              Facebook
+            </a>
+          </p>
+
+          <hr class="border-secondary my-4">
+
+          <h5 class="fw-bold">Estamos para ayudarte</h5>
+
+          <p>
+            Consulta por productos, compatibilidad, disponibilidad,
+            despachos y cualquier duda relacionada con tecnología.
+          </p>
+
+          <i class="bi bi-headset display-4 brand-highlight"></i>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="contact-box">
+          <form method="POST" action="https://formsubmit.co/raiandi@outlook.cl">
+
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde TecnoMundo Store">
+            <input type="hidden" name="_autoresponse" value="Gracias por escribirnos. Hemos recibido tu mensaje y responderemos a la brevedad.">
+            <input type="hidden" name="_next" value="gracias.html">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="mb-3">
+              <label for="nombre" class="form-label fw-bold">Nombre</label>
+              <input type="text" class="form-control" id="nombre"
+                name="nombre" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label fw-bold">Correo electrónico</label>
+              <input type="email" name="email" required
+                class="form-control" id="email" placeholder="tu@email.com">
+            </div>
+
+            <div class="mb-3">
+              <label for="asunto" class="form-label fw-bold">Asunto</label>
+              <input type="text" class="form-control" id="asunto"
+                name="asunto" placeholder="¿En qué podemos ayudarte?">
+            </div>
+
+            <div class="mb-4">
+              <label for="mensaje" class="form-label fw-bold">Mensaje</label>
+              <textarea class="form-control" id="mensaje" name="mensaje"
+                rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-cyan w-100">
+              Enviar mensaje <i class="bi bi-send ms-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row align-items-center gy-3">
+      <div class="col-md-6">
+        <p class="mb-0">
+          <i class="bi bi-cpu-fill brand-highlight"></i>
+          <strong class="text-white">TecnoMundo Store</strong>
+        </p>
+        <small>La tecnología que necesitas, a un clic.</small>
+      </div>
+
+      <div class="col-md-6 text-md-end">
+        <a href="https://www.instagram.com/" target="_blank"
+          rel="noopener noreferrer" class="social-link">
+          <i class="bi bi-instagram"></i>
+        </a>
+
+        <a href="https://facebook.com/" target="_blank"
+          rel="noopener noreferrer" class="social-link">
+          <i class="bi bi-facebook"></i>
+        </a>
+      </div>
+    </div>
+
+    <hr class="border-secondary mt-4">
+
+    <div class="text-center">
+      <small>
+        © 2026 TecnoMundo Store. Todos los derechos reservados.
+      </small>
+    </div>
+  </div>
+</footer>
+
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- CIERRE AUTOMÁTICO DEL MENÚ MOBILE -->
+<script>
+  document.querySelectorAll('#navbarMenu .nav-link, #navbarMenu .btn')
+    .forEach(function(link) {
+      link.addEventListener('click', function() {
+        const menu = document.getElementById('navbarMenu');
+        const bsCollapse = bootstrap.Collapse.getInstance(menu);
+
+        if (menu.classList.contains('show') && bsCollapse) {
+          bsCollapse.hide();
+        }
+      });
+    });
+</script>
+
+</body>
+</html>
